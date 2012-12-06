@@ -1,1 +1,14 @@
-Type make to compile
+Type 'make' to compile
+
+Syntax
+======
+
+./eotparser -r input.eot -w output.ttf
+
+Libraries
+=========
+
+I found and use the eot and mtx libraries on github:
+https://github.com/greyfont/ttf2eot
+
+ 
