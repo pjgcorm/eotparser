@@ -89,6 +89,6 @@ main (int argc, char **argv)
         fprintf (stderr, "[!] no input file\n");
         return 1; 
     }
-    printf ("[*] Done.")
+    printf ("[*] Done.");
     return 0;
 }
