@@ -4,5 +4,5 @@
 //#define BIT16           /* for 16-bit applications */
 //#define __cplusplus     /* for C++ applications */
 //#define _WINDOWS        /* for Windows applications */
-#define VERBOSE         /* for standard printf printout */
+//#define VERBOSE         /* for standard printf printout */
 #define __huge

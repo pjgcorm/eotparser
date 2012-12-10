@@ -66,8 +66,17 @@ main (int argc, char **argv)
             mtx_init(&mtx, state->fontdata, state->head.FontDataSize);
             //mtx_dump(mtx);
             
+            /* Write font to output file */
             mtx_getRest(mtx, &rest, &rsize);
             fwrite(rest, 1, rsize, output);
+
+            /* Search for URLs */
+            int i = 0;
+            char *pattern = "http";
+            for (i = 0; i < rsize; i++){
+                if (memcmp(&rest[i], pattern, 4)==0)
+                    printf("[-] Found URL: %s\n", &rest[i]);
+            }
 
             mtx_getData(mtx, &state->fontdata, &state->head.FontDataSize);
             fwrite(state->fontdata, 1, state->head.FontDataSize, output);
@@ -89,6 +98,6 @@ main (int argc, char **argv)
         fprintf (stderr, "[!] no input file\n");
         return 1; 
     }
-    printf ("[*] Done.");
+    printf ("[*] Done.\n");
     return 0;
 }
